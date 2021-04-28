@@ -3,7 +3,7 @@
 
 #include "Unit.hpp"
 
-class Soldier: public virtual Unit {
+class Soldier: public Unit {
     public:
         Soldier(const std::string& name);
         ~Soldier();
