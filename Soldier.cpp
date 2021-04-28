@@ -1,5 +1,5 @@
 #include "Soldier.hpp"
-#include "Attack.cpp"
+#include "Attack.hpp"
 
 Soldier::Soldier(const std::string& name): Unit(name) {}
 
