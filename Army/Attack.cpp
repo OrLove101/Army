@@ -1,8 +1,10 @@
 #include "Attack.hpp"
 #include "Unit.hpp"
 
-Attack::Attack( Health& health ) {
+Attack::Attack(Health& health, Unit& thisUnit) {
     this->health = health;
+    this->damage = 10;
+    this->thisUnit = thisUnit;
 }
 
 Attack::~Attack() {}
@@ -19,7 +21,7 @@ void Attack::attack(Unit& enemy) {
     enemy.getHealth().takeDamage(this->damage);
 
     if ( enemy.getHealth().getHitPoints() != 0 ) {
-        enemy.getAttack().counterAttack(enemy);
+        enemy.getAttack().counterAttack(thisUnit);
     }
 }
 
