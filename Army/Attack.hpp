@@ -3,16 +3,17 @@
 
 #include <iostream>
 #include "Health.hpp"
+#include "State.hpp"
 
 class Unit;
 
 class Attack {
 protected:
     int damage;
+    State state;
     Health health;
-    // Unit& thisUnit;
 public:
-    Attack(Health& health/*, Unit& thisUnit*/);
+    Attack();
     ~Attack();
 
     void attack(Unit& enemy, Unit& thisUnit);
