@@ -1,9 +1,7 @@
 #include "Attack.hpp"
 #include "Unit.hpp"
 
-Attack::Attack(/*Health& health, State& state*/) {
-    // this->state = state;
-    // this->health = health;
+Attack::Attack() {
     this->damage = 10;
 }
 
@@ -19,8 +17,6 @@ int Attack::getDamage() const {
 
 void Attack::attack(Unit& enemy, Unit& thisUnit) {
     enemy.getHealth().takeDamage(this->damage);
-
-    std::cout << thisUnit.getState().isCounterAttackable() << std::endl;
 
     if ( enemy.getHealth().getHitPoints() != 0 && thisUnit.getState().isCounterAttackable() ) {
         enemy.getAttack().counterAttack(thisUnit);

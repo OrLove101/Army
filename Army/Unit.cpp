@@ -6,7 +6,7 @@ Unit::Unit(const std::string& name) {
 
     this->state = new State();
     this->health = new Health();
-    this->unitAttack = new Attack(/**this->health, *this->state*/);
+    this->unitAttack = new Attack();
 }
 
 Unit::~Unit() {}

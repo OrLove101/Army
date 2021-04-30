@@ -13,7 +13,7 @@ protected:
     State state;
     Health health;
 public:
-    Attack(/*Health& health, State& state*/);
+    Attack();
     ~Attack();
 
     void attack(Unit& enemy, Unit& thisUnit);
