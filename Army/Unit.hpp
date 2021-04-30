@@ -10,11 +10,10 @@ class Attack;
 class Unit {
     protected:
         std::string name;
-    public:
         Health* health;
         Attack* unitAttack;
         State* state;
-
+    public:
         Unit(const std::string& name);
         virtual ~Unit();
 
