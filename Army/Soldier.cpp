@@ -10,7 +10,7 @@ void Soldier::takeDamage(int dmg) {
 }
 
 void Soldier::attack(Unit& enemy) {
-    this->getAttack().attack(enemy);
+    this->getAttack().attack(enemy, *this);
 }
 
 void Soldier::counterAttack(Unit& enemy) {
