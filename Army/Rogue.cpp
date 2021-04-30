@@ -13,5 +13,5 @@
         this->getAttack().attack(enemy, *this);
     }
     void Rogue::counterAttack(Unit& enemy){
-        this->getAttack().counterAttack(enemy);
+        this->getAttack().counterAttack(enemy, *this);
     }

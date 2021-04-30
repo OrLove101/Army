@@ -14,5 +14,5 @@ void Soldier::attack(Unit& enemy) {
 }
 
 void Soldier::counterAttack(Unit& enemy) {
-    this->getAttack().counterAttack(enemy);
+    this->getAttack().counterAttack(enemy, *this);
 } 

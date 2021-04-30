@@ -3,6 +3,7 @@
 State::State() {
     this->counterAttackable = true;
     this->canTakeMagicDamage = true;
+    this->unitIsVampire = false;
 }
 State::~State() {}
 
@@ -20,4 +21,12 @@ bool State::isCanTakeMagicDamage() const {
 
 void State::setMagicResist() {
     this->canTakeMagicDamage = false;
+}
+
+bool State::isVampire() const {
+    return this->unitIsVampire;
+}
+
+void State::makeVampire() {
+    this->unitIsVampire = true;
 }

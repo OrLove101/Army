@@ -17,7 +17,7 @@ public:
     ~Attack();
 
     void attack(Unit& enemy, Unit& thisUnit);
-    void counterAttack(Unit& enemy);
+    void counterAttack(Unit& enemy, Unit& you);
 
     int getDamage() const;
     void setDamage(int damage);

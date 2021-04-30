@@ -7,6 +7,7 @@ class State {
 private:
     bool counterAttackable;
     bool canTakeMagicDamage;
+    bool unitIsVampire;
 public:
     State();
     ~State();
@@ -16,5 +17,8 @@ public:
 
     bool isCanTakeMagicDamage() const;
     void setMagicResist();
+
+    bool isVampire() const;
+    void makeVampire();
 };
 #endif

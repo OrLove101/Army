@@ -7,7 +7,6 @@ class Health {
 protected:
     int hitPointsLimit;
     int hitPoints;
-    void addHitPoints(int hp);
 public:
     Health();
     ~Health();
@@ -19,6 +18,7 @@ public:
     int getHitPointsLimit() const;
     void setHitPoints(int hitPoints);
     void setHitPointsLimit(int hitPointsLimit);
+    void addHitPoints(int hp);
 };
 
 #endif
