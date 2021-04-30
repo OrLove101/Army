@@ -15,4 +15,8 @@ void Soldier::attack(Unit& enemy) {
 
 void Soldier::counterAttack(Unit& enemy) {
     this->getAttack().counterAttack(enemy, *this);
-} 
+}
+
+void Soldier::transform(Unit& enemy) {
+    this->getAbility().transform(enemy, *this);
+}

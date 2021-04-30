@@ -7,9 +7,9 @@
 int main() {
     Vampire* vampire = new Vampire("Hahakula");
     Soldier* soldier = new Soldier("Capral");
-    // Soldier* soldier2 = new Soldier("Cap");
-    // Rogue* rogue = new Rogue("Blinde Bob");
-    // Berserker* berserk = new Berserker("Guts");
+    Soldier* soldier2 = new Soldier("Cap");
+    Rogue* rogue = new Rogue("Blinde Bob");
+    Berserker* berserk = new Berserker("Guts");
 
     std::cout << *soldier << " vs " << *vampire << std::endl;
 
@@ -18,6 +18,8 @@ int main() {
     std::cout << *soldier << " vs " << *vampire << std::endl;
 
     std::cout << "-------------------------------" << std::endl;
+
+    vampire->transform(*soldier);
 
     vampire->attack(*soldier);
 

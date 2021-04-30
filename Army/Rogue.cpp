@@ -15,3 +15,7 @@
     void Rogue::counterAttack(Unit& enemy){
         this->getAttack().counterAttack(enemy, *this);
     }
+
+    void Rogue::transform(Unit& enemy) {
+        this->getAbility().transform(enemy, *this);
+    }

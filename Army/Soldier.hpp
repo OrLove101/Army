@@ -11,6 +11,7 @@ class Soldier: public Unit {
         void takeDamage(int dmg);
         void attack(Unit& enemy);
         void counterAttack(Unit& enemy);
+        void transform(Unit& enemy);
 };
 
 #endif

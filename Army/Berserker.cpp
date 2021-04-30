@@ -15,3 +15,6 @@
     void Berserker::counterAttack(Unit& enemy) {
         this->getAttack().counterAttack(enemy, *this);
     }
+    void Berserker::transform(Unit& enemy) {
+        this->getAbility().transform(enemy, *this);
+    }

@@ -15,3 +15,7 @@
     void Vampire::counterAttack(Unit& enemy) {
         this->getAttack().counterAttack(enemy, *this);
     }
+
+    void Vampire::transform(Unit& enemy) {
+        this->getAbility().transform(enemy, *this);
+    }

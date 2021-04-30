@@ -7,6 +7,7 @@ Unit::Unit(const std::string& name) {
     this->state = new State();
     this->health = new Health();
     this->unitAttack = new Attack();
+    this->ability = new Ability();
 }
 
 Unit::~Unit() {}
@@ -20,6 +21,9 @@ Attack& Unit::getAttack() const {
 }
 State& Unit::getState() const {
     return *this->state;
+}
+Ability& Unit::getAbility() const {
+    return *this->ability;
 }
 
 const std::string& Unit::getName() const {
