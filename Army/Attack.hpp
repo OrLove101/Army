@@ -10,9 +10,9 @@ class Attack {
 protected:
     int damage;
     Health health;
-    Unit& thisUnit;
+    // Unit& thisUnit;
 public:
-    Attack(Health& health, Unit& thisUnit);
+    Attack(Health& health/*, Unit& thisUnit*/);
     ~Attack();
 
     void attack(Unit& enemy);
