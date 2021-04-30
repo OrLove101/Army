@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Health.hpp"
+#include "State.hpp"
 
 class Attack;
 
@@ -12,11 +13,15 @@ class Unit {
     public:
         Health* health;
         Attack* unitAttack;
+        State* state;
+
         Unit(const std::string& name);
         virtual ~Unit();
 
         Health& getHealth() const;
         Attack& getAttack() const;
+        State& getState() const;
+
         const std::string& getName() const;
 
         virtual void takeDamage(int dmg) = 0;
