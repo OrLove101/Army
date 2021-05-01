@@ -12,6 +12,7 @@ public:
     void attack(Unit& enemy);
     void counterAttack(Unit& enemy);
     void transform(Unit& enemy);
+    void transform();
 };
 
 #endif

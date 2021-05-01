@@ -1,12 +1,12 @@
-#ifndef BERSERKER_H
-#define BERSERKER_H
+#ifndef WAREWOLF_H
+#define WAREWOLF_H
 
 #include "Unit.hpp"
 
-class Berserker: public Unit {
+class Werewolf: public Unit {
 public:
-    Berserker(const std::string& name);
-    ~Berserker();
+    Werewolf(const std::string& name);
+    ~Werewolf();
 
     void takeDamage(int dmg);
     void attack(Unit& enemy);

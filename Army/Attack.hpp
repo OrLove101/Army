@@ -10,8 +10,6 @@ class Unit;
 class Attack {
 protected:
     int damage;
-    // State state;
-    // Health health;
 public:
     Attack();
     ~Attack();

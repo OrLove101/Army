@@ -18,3 +18,6 @@
     void Berserker::transform(Unit& enemy) {
         this->getAbility().transform(enemy, *this);
     }
+    void Berserker::transform() {
+        this->getAbility().transform(*this);
+    }

@@ -19,3 +19,7 @@
     void Rogue::transform(Unit& enemy) {
         this->getAbility().transform(enemy, *this);
     }
+
+    void Rogue::transform() {
+        this->getAbility().transform(*this);
+    }

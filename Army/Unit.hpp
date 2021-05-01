@@ -30,6 +30,7 @@ class Unit {
         virtual void attack(Unit& enemy) = 0;
         virtual void counterAttack(Unit& enemy) = 0;
         virtual void transform(Unit& enemy) = 0;
+        virtual void transform() = 0;
 };
 
 std::ostream& operator<<(std::ostream& out, const Unit& unit);

@@ -11,6 +11,7 @@ public:
     ~Ability();
 
      void transform(Unit& enemy, Unit& you);
+     void transform(Unit& you);
 };
 
 #endif

@@ -4,6 +4,8 @@ State::State() {
     this->counterAttackable = true;
     this->canTakeMagicDamage = true;
     this->unitIsVampire = false;
+    this->unitIsWerewolf = false;
+    this->unitIsWolf = false;
 }
 State::~State() {}
 
@@ -29,4 +31,19 @@ bool State::isVampire() const {
 
 void State::makeVampire() {
     this->unitIsVampire = true;
+}
+
+bool State::isWerewolf() const {
+    return this->unitIsWerewolf;
+}
+
+void State::makeWerewolf() {
+    this->unitIsWerewolf = true;
+}
+
+bool State::isWolf() const {
+    return this->unitIsWolf;
+}
+void State::wereWolfTransform() {
+    this->unitIsWolf = !this->unitIsWolf;
 }

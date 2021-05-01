@@ -19,3 +19,7 @@
     void Vampire::transform(Unit& enemy) {
         this->getAbility().transform(enemy, *this);
     }
+
+    void Vampire::transform() {
+        this->getAbility().transform(*this);
+    }

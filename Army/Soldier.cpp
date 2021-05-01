@@ -20,3 +20,7 @@ void Soldier::counterAttack(Unit& enemy) {
 void Soldier::transform(Unit& enemy) {
     this->getAbility().transform(enemy, *this);
 }
+
+void Soldier::transform() {
+    this->getAbility().transform(*this);
+}
