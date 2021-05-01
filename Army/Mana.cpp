@@ -10,15 +10,10 @@ bool Mana::ensureHaveMana() {
     return this->currentMana > 0;
 }
 void Mana::takeMana(int mana) {
-    if ( ensureHaveMana() ) {
-        int potentialMana;
+    int potentialMana;
 
-        potentialMana = this->currentMana - mana;
-        if ( potentialMana < 0 ) {
-            potentialMana = 0;
-        }
-        this->currentMana = potentialMana;
-    }
+    potentialMana = this->currentMana - mana;
+    this->currentMana = potentialMana;
 }
 
 int Mana::getManaLimit() const {

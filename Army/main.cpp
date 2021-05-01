@@ -4,53 +4,61 @@
 #include "Rogue.hpp"
 #include "Berserker.hpp"
 #include "Vampire.hpp"
+#include "SpellCaster.hpp"
+#include "Wizard.hpp"
 
 int main() {
-    Werewolf* werewolf = new Werewolf("Mihalich");
-    Vampire* vampire = new Vampire("Hahakula");
+
+    Wizard* wizard = new Wizard("Invoker");
+    // Werewolf* werewolf = new Werewolf("Mihalich");
+    // Vampire* vampire = new Vampire("Hahakula");
     Soldier* soldier = new Soldier("Capral");
-    Rogue* rogue = new Rogue("Blinde Bob");
-    Berserker* berserk = new Berserker("Guts");
+    // Rogue* rogue = new Rogue("Blinde Bob");
+    // Berserker* berserk = new Berserker("Guts");
     
-    rogue->attack(*soldier);
+    // rogue->attack(*soldier);
 
-    std::cout << *soldier << " vs " << *rogue << std::endl;
+    std::cout << *soldier << " vs " << *wizard << std::endl;
 
-    std::cout << "-------------------------------" << std::endl;
+    wizard->spellCast(*soldier);
 
-    std::cout << *berserk << " vs " << *rogue << std::endl;
+    std::cout << *soldier << " vs " << *wizard << std::endl;
 
-    berserk->attack(*rogue);
+    // std::cout << "-------------------------------" << std::endl;
 
-    std::cout << *berserk << " vs " << *rogue << std::endl;
+    // std::cout << *berserk << " vs " << *rogue << std::endl;
 
-    std::cout << "-------------------------------" << std::endl;
+    // berserk->attack(*rogue);
 
-    std::cout << *berserk << " vs " << *vampire << std::endl;
+    // std::cout << *berserk << " vs " << *rogue << std::endl;
 
-    berserk->attack(*vampire);
+    // std::cout << "-------------------------------" << std::endl;
 
-    std::cout << *berserk << " vs " << *vampire << std::endl;
+    // std::cout << *berserk << " vs " << *vampire << std::endl;
 
-    std::cout << "-------------------------------" << std::endl;
+    // berserk->attack(*vampire);
 
-    std::cout << *werewolf << " vs " << *berserk << std::endl;
+    // std::cout << *berserk << " vs " << *vampire << std::endl;
 
-    werewolf->attack(*berserk);
+    // std::cout << "-------------------------------" << std::endl;
 
-    std::cout << *werewolf << " vs " << *berserk << std::endl;
+    // std::cout << *werewolf << " vs " << *berserk << std::endl;
 
-    werewolf->transform();
-    std::cout << "transformation" << std::endl;
+    // werewolf->attack(*berserk);
 
-    std::cout << *werewolf << " vs " << *berserk << std::endl;
+    // std::cout << *werewolf << " vs " << *berserk << std::endl;
 
-    werewolf->transform();
-    werewolf->transform(*berserk);
-    berserk->transform();
-    std::cout << "transformation" << std::endl;
+    // werewolf->transform();
+    // std::cout << "transformation" << std::endl;
 
-    std::cout << *werewolf << " vs " << *berserk << std::endl;
+    // std::cout << *werewolf << " vs " << *berserk << std::endl;
+
+    // werewolf->transform();
+    // werewolf->transform(*berserk);
+    // berserk->transform();
+    // std::cout << "transformation" << std::endl;
+
+    // std::cout << *werewolf << " vs " << *berserk << std::endl;
 
     // std::cout << *soldier << " vs " << *rogue << std::endl;
 
