@@ -1,18 +1,11 @@
 #ifndef BERSERKER_H
 #define BERSERKER_H
 
-#include "Unit.hpp"
+#include "Soldier.hpp"
 
-class Berserker: public Unit {
+class Berserker: public Soldier {
 public:
     Berserker(const std::string& name);
-    ~Berserker();
-
-    void takeDamage(int dmg);
-    void attack(Unit& enemy);
-    void counterAttack(Unit& enemy);
-    void transform(Unit& enemy);
-    void transform();
 };
 
 #endif

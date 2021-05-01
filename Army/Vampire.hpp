@@ -1,18 +1,11 @@
 #ifndef VAMPIRE_H
 #define VAMPIRE_H
 
-#include "Unit.hpp"
+#include "Soldier.hpp"
 
-class Vampire: public Unit {
+class Vampire: public Soldier {
 public:
     Vampire(const std::string& name);
-    ~Vampire();
-
-    void takeDamage(int dmg);
-    void attack(Unit& enemy);
-    void counterAttack(Unit& enemy);
-    void transform(Unit& enemy);
-    void transform();
 };
 
 #endif
