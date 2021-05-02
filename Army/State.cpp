@@ -7,6 +7,8 @@ State::State() {
     this->unitIsWerewolf = false;
     this->unitIsWolf = false;
     this->unitIsHealer = false;
+    this->unitIsPriest = false;
+    this->unitIsUndead = false;
 }
 State::~State() {}
 
@@ -56,4 +58,21 @@ bool State::isHealer() const {
 
 void State::makeHealer() {
     this->unitIsHealer = true;
+}
+
+
+bool State::isUndead() const {
+    return this->unitIsUndead;
+}
+
+void State::makeUndead() {
+    this->unitIsUndead = true;
+}
+
+bool State::isPriest() const {
+    return this->unitIsPriest;
+}
+
+void State::makePriest() {
+    this->unitIsPriest = true;
 }

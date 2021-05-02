@@ -12,6 +12,10 @@ void MagicAttack::spellCast(Unit& enemy, SpellCaster& thisUnit) {
 
         if ( thisUnit.getState().isHealer() ) {
             potentialPower /= 2;
+            
+            if ( enemy.getState().isUndead() && thisUnit.getState().isPriest() ) {
+                potentialPower *= 2;
+            }
         }
         if ( enemy.getState().isCanTakeMagicDamage() ) {
             enemy.getHealth().takeDamage(potentialPower);

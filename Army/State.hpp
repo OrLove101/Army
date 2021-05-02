@@ -11,6 +11,8 @@ private:
     bool unitIsWerewolf;
     bool unitIsWolf;
     bool unitIsHealer;
+    bool unitIsUndead;
+    bool unitIsPriest;
 public:
     State();
     ~State();
@@ -32,5 +34,11 @@ public:
 
     bool isHealer() const;
     void makeHealer();
+
+    bool isUndead() const;
+    void makeUndead();
+
+    bool isPriest() const;
+    void makePriest();
 };
 #endif

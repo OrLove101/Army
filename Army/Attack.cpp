@@ -16,10 +16,15 @@ int Attack::getDamage() const {
 }
 
 void Attack::attack(Unit& enemy, Unit& thisUnit) {
-    enemy.getHealth().takeDamage(this->damage);
+    int potentialDamage = this->damage;
 
+    if ( enemy.getState().isUndead() && thisUnit.getState().isPriest() ) {
+        potentialDamage *= 2;
+    }
+
+    enemy.getHealth().takeDamage(potentialDamage);
     if ( thisUnit.getState().isVampire() ) {
-        thisUnit.getHealth().addHitPoints(this->damage/2);
+        thisUnit.getHealth().addHitPoints(potentialDamage/2);
     }
 
     if ( enemy.getHealth().getHitPoints() != 0 && thisUnit.getState().isCounterAttackable() ) {
@@ -28,9 +33,15 @@ void Attack::attack(Unit& enemy, Unit& thisUnit) {
 }
 
 void Attack::counterAttack(Unit& enemy, Unit& you) {
-    enemy.getHealth().takeDamage(this->damage/2);
+    int potentialDamage = this->damage;
+
+    if ( you.getState().isUndead() && enemy.getState().isPriest() ) {
+        potentialDamage *= 2;
+    }
+
+    enemy.getHealth().takeDamage(potentialDamage/2);
 
     if ( you.getState().isVampire() ) {
-        you.getHealth().addHitPoints(this->damage/4);
+        you.getHealth().addHitPoints(potentialDamage/4);
     }
 }
