@@ -14,9 +14,13 @@ int main() {
     // Vampire* vampire = new Vampire("Hahakula");
     Soldier* soldier = new Soldier("Capral");
     // Rogue* rogue = new Rogue("Blinde Bob");
-    // Berserker* berserk = new Berserker("Guts");
+    //Berserker* berserk = new Berserker("Guts");
     
     // rogue->attack(*soldier);
+
+    std::cout << *soldier << " vs " << *wizard << std::endl;
+    
+    wizard->spellCast(*soldier);
 
     std::cout << *soldier << " vs " << *wizard << std::endl;
 

@@ -1,7 +1,10 @@
 #include "Wizard.hpp"
 
 Wizard::Wizard(const std::string& name): SpellCaster(name) {
-    this->spellBook->insert(std::pair<SpellList, Spell&>(FIREBALL, *new MagicAttack(30, 10)));
+    this->spellBook->insert(std::pair<SpellList, Spell&>(FIREBALL, *new MagicAttack(40, 20)));
+    this->spellBook->insert(std::pair<SpellList, Spell&>(FREEZ, *new MagicAttack(20, 5)));
+    this->spellBook->insert(std::pair<SpellList, Spell&>(FLOOD, *new MagicAttack(15, 1)));
+    this->spellBook->insert(std::pair<SpellList, Spell&>(PATCHUP, *new MagicHeal(10, 5)));
 }
 
 void Wizard::spellCast(Unit& enemy) {
@@ -25,10 +28,9 @@ void Wizard::spellCast(Unit& enemy) {
         } else if ( it->first == HEAL ) {
             std::cout << HEAL << " - Heal" << std::endl;
         }
-
+    }
     std::cout << "Type in which spell you want to use" << std::endl;
     std::cin >> spellToUse;
 
     this->spellBook->find(static_cast<SpellList>(spellToUse))->second.spellCast(enemy, *this);
-    }
 }

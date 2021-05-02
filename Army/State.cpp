@@ -6,6 +6,7 @@ State::State() {
     this->unitIsVampire = false;
     this->unitIsWerewolf = false;
     this->unitIsWolf = false;
+    this->unitIsHealer = false;
 }
 State::~State() {}
 
@@ -44,6 +45,15 @@ void State::makeWerewolf() {
 bool State::isWolf() const {
     return this->unitIsWolf;
 }
+
 void State::wereWolfTransform() {
     this->unitIsWolf = !this->unitIsWolf;
+}
+
+bool State::isHealer() const {
+    return this->unitIsHealer;
+}
+
+void State::makeHealer() {
+    this->unitIsHealer = true;
 }
