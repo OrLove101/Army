@@ -7,15 +7,15 @@ MagicAttack::~MagicAttack() {}
 
 void MagicAttack::spellCast(Unit& enemy, SpellCaster& thisUnit) {
 
-        if ( thisUnit.getMana().getCurrentMana() >= this->manaConsume ) {
-            int potentialPower = this->magicPower;
+    if ( thisUnit.getMana().getCurrentMana() >= this->manaConsume ) {
+        int potentialPower = this->magicPower;
 
-            if ( thisUnit.getState().isHealer() ) {
-                potentialPower /= 2;
-            }
-            if ( enemy.getState().isCanTakeMagicDamage() ) {
-                enemy.getHealth().takeDamage(potentialPower);
-            }
-            thisUnit.getMana().takeMana(this->manaConsume);
+        if ( thisUnit.getState().isHealer() ) {
+            potentialPower /= 2;
         }
+        if ( enemy.getState().isCanTakeMagicDamage() ) {
+            enemy.getHealth().takeDamage(potentialPower);
+        }
+        thisUnit.getMana().takeMana(this->manaConsume);
+    }
 }

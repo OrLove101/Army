@@ -6,10 +6,12 @@
 #include "Vampire.hpp"
 #include "SpellCaster.hpp"
 #include "Wizard.hpp"
+#include "Healer.hpp"
 
 int main() {
 
     Wizard* wizard = new Wizard("Invoker");
+    Healer* healer = new Healer("Witch Doctor");
     // Werewolf* werewolf = new Werewolf("Mihalich");
     // Vampire* vampire = new Vampire("Hahakula");
     Soldier* soldier = new Soldier("Capral");
@@ -24,7 +26,11 @@ int main() {
 
     std::cout << *soldier << " vs " << *wizard << std::endl;
 
-    wizard->spellCast(*soldier);
+    healer->spellCast(*soldier);
+
+    std::cout << *soldier << " vs " << *wizard << std::endl;
+
+    healer->spellCast(*soldier);
 
     std::cout << *soldier << " vs " << *wizard << std::endl;
 
