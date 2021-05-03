@@ -6,10 +6,10 @@ Ability::Ability() {}
 Ability::~Ability() {}
 
 void Ability::transform(Unit& enemy, Unit& you) {
-    if ( you.getState().isVampire() ) {
+    if ( you.getState().isVampire() && !enemy.getState().isWerewolf() ) {
         enemy.getState().makeVampire();
     }
-    if ( you.getState().isWerewolf() ) {
+    if ( you.getState().isWerewolf() && !enemy.getState().isVampire() ) {
         enemy.getState().makeWerewolf();
     }
 }

@@ -8,31 +8,47 @@
 #include "Wizard.hpp"
 #include "Healer.hpp"
 #include "Priest.hpp"
+#include "Warlock.hpp"
+#include "Necromancer.hpp"
 
 int main() {
 
-    Priest* priest = new Priest("Batushka");
-    Wizard* wizard = new Wizard("Invoker");
-    Healer* healer = new Healer("Witch Doctor");
-    // Werewolf* werewolf = new Werewolf("Mihalich");
-    Vampire* vampire = new Vampire("Hahakula");
+    Necromancer* necromancer = new Necromancer("Necro");
+    Warlock* warlock = new Warlock("Warlock");
+    // Priest* priest = new Priest("Batushka");
+    // Wizard* wizard = new Wizard("Invoker");
+    // Healer* healer = new Healer("Witch Doctor");
+    // // Werewolf* werewolf = new Werewolf("Mihalich");
+    // Vampire* vampire = new Vampire("Hahakula");
     Soldier* soldier = new Soldier("Capral");
-    // Rogue* rogue = new Rogue("Blinde Bob");
-    //Berserker* berserk = new Berserker("Guts");
+    Deamon* deamon = &warlock->summon();
+    // Deamon* deamon2 = &warlock->summon();
+    // // Rogue* rogue = new Rogue("Blinde Bob");
+    // //Berserker* berserk = new Berserker("Guts");
 
-    std::cout << *vampire << " vs " << *priest << std::endl;
-    std::cout << *soldier << " vs " << *priest << std::endl;
+    soldier->attack(*necromancer);
+    necromancer->attack(*soldier);
+
+    std::cout << *soldier << " vs " << *necromancer << std::endl;
+
+    std::cout << *soldier << " vs " << *deamon << std::endl;
+
+    soldier->attack(*deamon);
+
+    std::cout << *soldier << " vs " << *necromancer << std::endl;
+    // std::cout << *soldier << " vs " << *deamon2 << std::endl;
+    // std::cout << *warlock << std::endl;
     
-    priest->attack(*vampire);
-    // priest->attack(*soldier);
+    // priest->attack(*vampire);
+    // // priest->attack(*soldier);
 
-    std::cout << *vampire << " vs " << *priest << std::endl;
-    // std::cout << *soldier << " vs " << *priest << std::endl;
+    // std::cout << *vampire << " vs " << *priest << std::endl;
+    // // std::cout << *soldier << " vs " << *priest << std::endl;
 
-    vampire->attack(*priest);
-    // soldier->attack(*priest);
+    // vampire->attack(*priest);
+    // // soldier->attack(*priest);
 
-    std::cout << *vampire << " vs " << *priest << std::endl;
+    // std::cout << *vampire << " vs " << *priest << std::endl;
     // std::cout << *soldier << " vs " << *priest << std::endl;
 
     // std::cout << *soldier << " vs " << *wizard << std::endl;

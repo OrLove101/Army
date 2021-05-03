@@ -5,10 +5,11 @@
 #include "Health.hpp"
 #include "State.hpp"
 #include "Ability.hpp"
+#include "Observable.hpp"
 
 class Attack;
 
-class Unit {
+class Unit: public Observable {
     protected:
         std::string name;
         Health* health;
@@ -31,6 +32,10 @@ class Unit {
         virtual void counterAttack(Unit& enemy) = 0;
         virtual void transform(Unit& enemy) = 0;
         virtual void transform() = 0;
+
+        void add(Observer& observer);
+        void remove(Observer& observer);
+        void notify();
 };
 
 std::ostream& operator<<(std::ostream& out, const Unit& unit);
