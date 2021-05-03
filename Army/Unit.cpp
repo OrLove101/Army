@@ -7,6 +7,7 @@ Unit::Unit(const std::string& name) {
     this->state = new State();
     this->health = new Health();
     this->unitAttack = new Attack();
+    this->ability = new Ability();
 }
 
 Unit::~Unit() {}
@@ -21,9 +22,25 @@ Attack& Unit::getAttack() const {
 State& Unit::getState() const {
     return *this->state;
 }
+Ability& Unit::getAbility() const {
+    return *this->ability;
+}
 
 const std::string& Unit::getName() const {
     return this->name;
+}
+
+void Unit::add(Observer& observer) {
+    this->observer = &observer;
+}
+void Unit::remove(Observer& observer) {
+    this->observer = 0;
+}
+void Unit::notify() {
+    if ( this->observer ) {
+        this->observer->update();
+    }
+    std::cout << "notify" << std::endl;
 }
 
 

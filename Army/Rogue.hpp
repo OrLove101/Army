@@ -1,16 +1,11 @@
 #ifndef ROGUE_H
 #define ROGUE_H
 
-#include "Unit.hpp"
+#include "Soldier.hpp"
 
-class Rogue: public Unit {
+class Rogue: public Soldier {
 public:
     Rogue(const std::string& name);
-    ~Rogue();
-
-    void takeDamage(int dmg);
-    void attack(Unit& enemy);
-    void counterAttack(Unit& enemy);
 };
 
 #endif
