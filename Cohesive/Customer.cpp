@@ -1,5 +1,4 @@
 #include "Customer.hpp"
-#include "Order.hpp"
 
 Customer::Customer() {
     this->lst = new std::list<Order*>();
@@ -10,12 +9,16 @@ Customer::Customer() {
 
 Customer::~Customer() {}
 
-std::list<Order*>& Customer::getOrders() {
-    return *this->lst;
+void Customer::getOrders() {
+    std::list<Order*>::iterator it;
+
+    for ( it = this->lst->begin(); it != this->lst->end(); it++ ) {
+        std::cout << *(*it) << std::endl;
+    }
 }
 
-void Customer::addOrder(Order& order) const {
-    this->lst->push_back(&order);
+void Customer::addOrder(Order* order) {
+    this->lst->push_back(order);
 }
 
 int Customer::getId() {

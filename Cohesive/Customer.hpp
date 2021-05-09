@@ -1,6 +1,7 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
+#include "Order.hpp"
 #include <iostream>
 #include <list>
 
@@ -16,8 +17,8 @@ public:
     Customer();
     ~Customer();
 
-    std::list<Order*>& getOrders();
-    void addOrder(Order& order) const;
+    void getOrders();
+    void addOrder(Order* order);
 
     int getId();
 };

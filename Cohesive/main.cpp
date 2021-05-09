@@ -1,26 +1,30 @@
-#include "Category.hpp"
-#include "Category.cpp"//???
-#include "Item.hpp"
-#include "Item.cpp"//???
-#include "Order.hpp"
-#include "Order.cpp"//???
-#include "Customer.hpp"
-#include "Customer.cpp"//???
 #include <iostream>
+#include "Customer.hpp"
+#include "Customer.cpp"
+#include "Order.hpp"
+#include "Order.cpp"
+#include "Item.hpp"
+#include "Item.cpp"
+#include "Category.hpp"
+#include "Category.cpp"
 
 int main() {
-    Category* cups = new Category();
-    Item* redCup = new Item(*cups);
-    Customer* grisha = new Customer();
-    Order* order = new Order(*grisha, *redCup);
+    Category* cups = new Category("cups");
+    Item* redCup = new Item("Red cup", cups);
+    Item* blueCup = new Item("Blue cup", cups);
+    Item* greenCup = new Item("Green cup", cups);
+    Customer* gosha = new Customer();
+    Order* order = new Order(gosha, redCup);
+    Order* order1 = new Order(gosha, redCup);
 
-    Category* phones = new Category();
-    Item* iphone = new Item(*phones);
-    // order->addItem(*iphone);
+    order->addItem(blueCup);
+    order1->addItem(greenCup);
 
-    // grisha->getOrders();
+    // order->getOrder();
 
-    std::cout << "cups - " << cups->getId() << std::endl;
+    redCup->getOrdersList();
+
+    // cups->getItems();
 
     return 0;
 }

@@ -1,7 +1,8 @@
 #ifndef ORDER_H
 #define ORDER_H
 
-#include <iostream>
+#include "Customer.hpp"
+#include "Item.hpp"
 #include <list>
 
 class Customer;
@@ -9,23 +10,24 @@ class Item;
 
 class Order {
 private:
-    const Customer* customer;
+    Customer* customer;
     std::list<Item*>* lst;
     int id;
 
     static int globalId;
 public:
-    // Order(Customer& customer, std::list<Item*>& lst);
-    Order(Customer& customer, Item& item);
+    Order(Customer* customer, Item* item);
 
     ~Order();
 
-    std::list<Item*>& getOrder();
+    void getOrder() const;
 
-    void addItem(Item& item);
-    void deleteItem(Item& item);
+    void addItem(Item* item);
+    void deleteItem(Item* item);
 
-    int getId();
+    int getId() const;
 };
+
+std::ostream& operator<<(std::ostream& out, const Order& order);
 
 #endif
