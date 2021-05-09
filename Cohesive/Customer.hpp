@@ -1,6 +1,7 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
+#include "ListException.hpp"
 #include "Order.hpp"
 #include <iostream>
 #include <list>

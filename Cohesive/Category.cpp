@@ -12,6 +12,9 @@ Category::Category(const std::string& name) {
 Category::~Category() {}
 
 void Category::getItems() const {
+    if ( this->lst->empty() ) {
+        throw ListIsEmpty();
+    }
     std::list<Item*>::iterator it;
 
     for ( it = this->lst->begin(); it != this->lst->end(); it++ ) {

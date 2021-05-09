@@ -14,6 +14,9 @@ Item::Item(const std::string& name, Category* category) {
 Item::~Item() {}
 
 void Item::getOrdersList() {
+    if ( this->lst->empty() ) {
+        throw ListIsEmpty();
+    }
     std::list<Order*>::iterator it;
 
     for ( it = this->lst->begin(); it != this->lst->end(); it++ ) {

@@ -1,6 +1,7 @@
 #ifndef ITEM_H
 #define ITEM_H
 
+#include "ListException.hpp"
 #include "Category.hpp"
 #include "Order.hpp"
 #include <iostream>

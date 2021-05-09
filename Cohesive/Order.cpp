@@ -16,6 +16,9 @@ Order::Order(Customer* customer, Item* item) {
 Order::~Order() { }
 
 void Order::getOrder() const {
+    if ( this->lst->empty() ) {
+        throw ListIsEmpty();
+    }
     std::list<Item*>::iterator it;
 
     for ( it = this->lst->begin(); it != this->lst->end(); it++ ) {

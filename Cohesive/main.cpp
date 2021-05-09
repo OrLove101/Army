@@ -21,16 +21,16 @@ int main() {
     order1->addItem(greenCup);
     order->addItem(greenCup);
 
-    //order->getOrder();
+    order->getOrder();
 
-    //redCup->getOrdersList();
+    redCup->getOrdersList();
 
-    //Order::getObjectsList();
-    //Item::getObjectsList();
-    //Customer::getObjectsList();
+    Order::getObjectsList();
+    Item::getObjectsList();
+    Customer::getObjectsList();
     Category::getObjectsList();
 
-    //cups->getItems();
+    cups->getItems();
 
     return 0;
 }

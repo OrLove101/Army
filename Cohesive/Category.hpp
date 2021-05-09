@@ -2,6 +2,7 @@
 #define CATEGORY_H
 
 #include "Item.hpp"
+#include "ListException.hpp"
 #include <iostream>
 #include <list>
 
