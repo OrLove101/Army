@@ -6,6 +6,7 @@ Order::Order(Customer* customer, Item* item) {
     this->lst->push_back(item);
 
     Order::globalId += 1;
+    Order::objectsList->push_back(this);
     this->id = Order::globalId;
 
     item->addOrder(this);
@@ -41,4 +42,13 @@ int Order::getId() const {
     return this->id;
 }
 
+void Order::getObjectsList() {
+    std::list<Order*>::iterator it;
+
+    for ( it = Order::objectsList->begin(); it != Order::objectsList->end(); it++ ) {
+        std::cout << *(*it) << std::endl;
+    }
+}
+
 int Order::globalId = 0;
+std::list<Order*>* Order::objectsList = new std::list<Order*>();

@@ -14,6 +14,7 @@ private:
     int id;
 
     static int globalId;
+    static std::list<Category*>* objectsList;
 
 public:
     Category(const std::string& name);
@@ -25,6 +26,8 @@ public:
     void deleteItem(Item* item);
     int getId() const;
     const std::string& getName() const;
+
+    static void getObjectsList();
 };
 
 std::ostream& operator<<(std::ostream& out, const Category& category);

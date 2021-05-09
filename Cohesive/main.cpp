@@ -13,18 +13,24 @@ int main() {
     Item* redCup = new Item("Red cup", cups);
     Item* blueCup = new Item("Blue cup", cups);
     Item* greenCup = new Item("Green cup", cups);
-    Customer* gosha = new Customer();
+    Customer* gosha = new Customer("Gosha");
     Order* order = new Order(gosha, redCup);
     Order* order1 = new Order(gosha, redCup);
 
     order->addItem(blueCup);
     order1->addItem(greenCup);
+    order->addItem(greenCup);
 
-    // order->getOrder();
+    //order->getOrder();
 
-    redCup->getOrdersList();
+    //redCup->getOrdersList();
 
-    // cups->getItems();
+    //Order::getObjectsList();
+    //Item::getObjectsList();
+    //Customer::getObjectsList();
+    Category::getObjectsList();
+
+    //cups->getItems();
 
     return 0;
 }

@@ -15,6 +15,7 @@ private:
     int id;
 
     static int globalId;
+    static std::list<Order*>* objectsList;
 public:
     Order(Customer* customer, Item* item);
 
@@ -26,6 +27,8 @@ public:
     void deleteItem(Item* item);
 
     int getId() const;
+
+    static void getObjectsList();
 };
 
 std::ostream& operator<<(std::ostream& out, const Order& order);

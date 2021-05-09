@@ -7,6 +7,7 @@ Item::Item(const std::string& name, Category* category) {
     this->category->addItem(this);
 
     Item::globalId += 1;
+    Item::objectsList->push_back(this);
     this->id = Item::globalId;
 }
 
@@ -37,5 +38,15 @@ std::ostream& operator<<(std::ostream& out, const Item& item) {
 
     return out;
 }
+
+void Item::getObjectsList() {
+    std::list<Item*>::iterator it;
+
+    for ( it = Item::objectsList->begin(); it != Item::objectsList->end(); it++ ) {
+        std::cout << *(*it) << std::endl;
+    }
+}
+
+std::list<Item*>* Item::objectsList = new std::list<Item*>();
 
 int Item::globalId = 0;

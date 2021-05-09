@@ -17,6 +17,7 @@ private:
     int id;
 
     static int globalId;
+    static std::list<Item*>* objectsList;
 public:
     Item(const std::string& name, Category* category);
     ~Item();
@@ -26,6 +27,8 @@ public:
     const std::string& getName() const;
 
     int getId();
+
+    static void getObjectsList();
 };
 
 std::ostream& operator<<(std::ostream& out, const Item& item);
